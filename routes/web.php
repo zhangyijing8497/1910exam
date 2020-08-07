@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('reg','UserController@reg');    //注册视图
+Route::post('reg','UserController@regDo');  //注册逻辑
+Route::get('login','UserController@login');   //登陆视图
+Route::post('login','UserController@loginDo');  //登陆逻辑
