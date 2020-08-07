@@ -106,6 +106,8 @@ class UserController extends Controller
         }
 
         if(password_verify($pwd,$res->pwd)){
+            //存session
+            session(['user_name' => $res['user_name']]);
             echo "<script>alert('登陆成功,正在跳转至新闻页');location='/index'</script>";
         }else{
             echo "<script>alert('密码不正确,请重新输入...');window.history.go(-1);</script>";
